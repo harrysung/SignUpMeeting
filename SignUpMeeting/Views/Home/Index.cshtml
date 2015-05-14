@@ -1,0 +1,54 @@
+﻿@{ ViewBag.Title = "Meeting!";}
+<div class="text-center" data-bind="visible: model.view() == 'welcome'">
+    <h2>Welcome to join our meeting!</h2>
+    <h3>And you are invited.</h3>
+    <button class="btn btn-success" data-bind="click: showForm">RSVP Now</button>
+</div>
+<div data-bind="visible: model.view() == 'form'">
+    <div class="panel panel-success">
+        <div class="panel-heading"><h4>RSVP</h4></div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label>Your name:</label>
+                <input class="form-control" data-bind="value: model.attendee.name" />
+            </div>
+            <div class="form-group">
+                <label>Your email:</label>
+                <input class="form-control" data-bind="value: model.attendee.email" />
+            </div>
+            <div class="form-group">
+                <label>Your Phone:</label>
+                <input class="form-control" data-bind="value: model.attendee.phone" />
+            </div>
+            <div class="form-group">
+                <label>Are you speaker?</label>
+                <select class="form-control" data-bind="value: model.attendee.isSpeaker">
+                    <option value="true">Yes, I am speaker</option>
+                    <option value="false">No, I'm not speaker</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success"
+                        data-bind="click: sendRsvp">
+                    Submit RSVP
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-bind="visible: model.view() == 'thanks'">
+    <h1>Thank you, <span data-bind="text: model.attendee.name()"></span>!</h1>
+    <div class="lead">
+        Thank you for join the meeting. The drinks are already in the fridge!
+        <br />
+        <span data-bind="visible: model.attendee.isSpeaker() == 'true'">
+            It's great that you're going to make a speech in the meeting.
+            <br />
+            Here is the list of speakers coming:
+            <span data-bind="text: model.attendees().join(',')"></span>
+        </span>
+        <span data-bind="visible: model.attendee.isSpeaker() == 'false'">
+            Sorry to hear that you are not going to make a speech, but thanks for letting us know.
+        </span>
+    </div>
+</div>
