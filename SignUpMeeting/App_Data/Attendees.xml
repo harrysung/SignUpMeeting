@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attendees>
+  <attendee id="at1001">
+    <name>Harry</name>
+    <email>harry@attendee.org</email>
+    <phone>612-432-9999</phone>
+    <isSpeaker>false</isSpeaker>
+  </attendee>
+  <attendee id="at1002">
+    <name>Peter</name>
+    <email>Peter@attendee.org</email>
+    <phone>615-162-6799</phone>
+    <isSpeaker>true</isSpeaker>
+  </attendee>
+  <attendee id="at1003">
+    <id />
+    <name>Juan</name>
+    <email>Juan@attendee.org</email>
+    <phone>641-819-4357</phone>
+    <isSpeaker>True</isSpeaker>
+  </attendee>
+  <attendee id="at1004">
+    <id />
+    <name>Paul</name>
+    <email>paul@attendee.org</email>
+    <phone>631-096-4478</phone>
+    <isSpeaker>True</isSpeaker>
+  </attendee>
+</attendees>
